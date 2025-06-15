@@ -22,6 +22,22 @@
     gap: 50px;
 }
 
+/* версия слабовидящих включена */
+
+.main_enabled {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    left: 5%;
+    bottom: 5%;
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    gap: 50px;
+}
+
+/* версия слабовидящих включена */
+
 .button_main {
     margin-left: 25px;
     margin-right: 25px;

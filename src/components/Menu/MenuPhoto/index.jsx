@@ -19,13 +19,17 @@ const MenuPhoto = ({ images }) => {
     setCurrentPhoto((prev) => Math.min(prev + 1, totalPhotos));
   };
 
+  if (totalPhotos === 0) {
+    return <div className={styles.content}>Нет фотографий</div>;
+  }
+
   return (
     <>
       <ImageModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <img className={styles.imageFullscreen} src={images[currentPhoto - 1]?.src} alt="Fullscreen" />
       </ImageModal>
       <div className={styles.content}>
-        <h3 className={styles.title}>{images[currentPhoto - 1]?.title || 'Название фото'}</h3>
+        <span className={styles.title}>{images[currentPhoto - 1]?.title || 'Название фото'}</span>
         <img className={styles.img} src={images[currentPhoto - 1]?.src} alt="MenuPhoto" />
         <div className={styles.controls}>
           <div className={styles.paginationContainer}>

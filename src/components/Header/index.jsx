@@ -5,6 +5,7 @@ import { toggleAccessibility, setColorScheme } from '../../store/accessibilitySl
 import styles from './Header.module.css';
 import CatalogModal from './CatalogModal';
 import ExhibitDetailModal from './CatalogModal/ExhibitDetailModal';
+import { useLanguage } from '../../LanguageContext';
 
 const Header = () => {
     const location = useLocation();
@@ -13,11 +14,11 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const { isEnabled, colorScheme, schemes } = useSelector(state => state.accessibility);
-    const [showColorPicker, setShowColorPicker] = useState(false);
     const handleSchemeChange = scheme => {
         dispatch(setColorScheme(scheme));
-        setShowColorPicker(false);
     };
+
+    const { data, lang, toggleLang } = useLanguage();
 
     // Состояния для управления модальными окнами
     const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -25,12 +26,13 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            {showColorPicker && (
+            {/* Всегда отображаем colorPicker при включенной доступности */}
+            {isEnabled && (
                 <div className={styles.colorPicker}>
                     {Object.entries(schemes).map(
                         ([key, [bgColor, textColor]]) =>
                             key !== 'default' && (
-                                <button
+                                <span
                                     key={key}
                                     className={styles.colorCircle}
                                     style={{
@@ -41,7 +43,7 @@ const Header = () => {
                                     title={`Схема ${key.replace('scheme', '')}`}
                                 >
                                     <span style={{ color: textColor }}>Ц</span>
-                                </button>
+                                </span>
                             )
                     )}
                 </div>
@@ -50,30 +52,25 @@ const Header = () => {
             {!isGamesPage && (
                 <>
                     <button
-                        onClick={() => {
-                            dispatch(toggleAccessibility());
-                            if (!isEnabled) setShowColorPicker(true);
-                            else setShowColorPicker(false);
-                        }}
+                        onClick={() => dispatch(toggleAccessibility())}
                         className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}
                     >
-                        Версия для <br /> слабовидящих
+                        {isEnabled ? data.accessibilityNormal : data.accessibilityToggle}
                     </button>
                     <button onClick={() => setIsCatalogOpen(true)} className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
-                        каталог <br /> экспонатов
+                        {data.catalog}
                     </button>
-                    <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>
-                        аудиогид <br /> по приложению
-                    </button>
+                    <button className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''}`}>{data.audioguide}</button>
                 </>
             )}
 
             {/* Кнопка "ru" всегда отображается с разными стилями */}
             <button
+                onClick={toggleLang}
                 className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''} 
                 ${isGamesPage ? styles.button_header_games : ''}`}
             >
-                ru
+                {lang}
             </button>
             {/* Модальное окно каталога */}
             {isCatalogOpen && (
