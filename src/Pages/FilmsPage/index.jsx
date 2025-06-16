@@ -1,121 +1,76 @@
 import { useState, useEffect } from 'react';
 import styles from './FilmsPage.module.css';
-import { library } from '../../data';
-import TabsMenu from './TabsMenu';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import FilmsTab from './FilmsTab';
+import AudioTab from './AudioTab/index.jsx';
+import BooksTab from './BooksTab';
+import { useLanguage } from '../../LanguageContext';
 
 const TABS = {
-    FILMS: 'films',
-    AUDIOBOOKS: 'audioBooks',
-    LECTURES: 'lectures',
-    BOOKS: 'books',
+  FILMS: 'films',
+  AUDIOBOOKS: 'audioBooks',
+  LECTURES: 'lectures',
+  BOOKS: 'books'
 };
 
-const TABS_CONFIG = [
-    { key: TABS.FILMS, label: 'Фильмы' },
-    { key: TABS.AUDIOBOOKS, label: 'Аудиокниги' },
-    { key: TABS.LECTURES, label: 'Лекции' },
-    { key: TABS.BOOKS, label: 'Книги' },
-];
-
-const ITEMS_PER_PAGE = 3;
-
 const FilmsPage = () => {
-    const [activeTab, setActiveTab] = useState(TABS.FILMS);
-    const [currentPages, setCurrentPages] = useState({
-        [TABS.FILMS]: 1,
-        [TABS.AUDIOBOOKS]: 1,
-        [TABS.LECTURES]: 1,
-        [TABS.BOOKS]: 1,
-    });
+  const [activeTab, setActiveTab] = useState(TABS.FILMS);
+  const { data } = useLanguage();
 
-    useEffect(() => {
-        setCurrentPages(prev => ({
-            ...prev,
-            [activeTab]: 1,
-        }));
-    }, [activeTab]);
-
-    const handlePageChange = newPage => {
-        setCurrentPages(prev => ({
-            ...prev,
-            [activeTab]: newPage,
-        }));
+  // Сбрасываем состояние при размонтировании
+  useEffect(() => {
+    return () => {
+      // Очистка ресурсов при размонтировании компонента
+      const videos = document.querySelectorAll('video');
+      videos.forEach((video) => {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+      });
     };
+  }, []);
 
-    const renderMediaContent = item => {
-        switch (activeTab) {
-            case TABS.BOOKS:
-                return <img src={item.image} alt={item.title} className={styles.mediaContent} />;
-            default:
-                return (
-                    <video controls className={styles.mediaContent} poster={item.poster}>
-                        <source src={item.video} type="video/mp4" />
-                        Ваш браузер не поддерживает видео тег.
-                    </video>
-                );
-        }
-    };
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case TABS.FILMS:
+        return <FilmsTab items={data.library.films} typeName="Фильмов" />;
+      case TABS.AUDIOBOOKS:
+        return <AudioTab items={data.library.audioBooks} typeName="Аудиокниг" />;
+      case TABS.LECTURES:
+        return <FilmsTab items={data.library.lectures} />;
+      case TABS.BOOKS:
+        return <BooksTab items={data.library.books} />;
+      default:
+        return null;
+    }
+  };
 
-    const renderPagination = totalItems => {
-        const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-        if (totalPages <= 1) return null;
+  return (
+    <div className={styles.container}>
+      <Header />
+      <h1 className={styles.mainTitle}>Фильмы и книги</h1>
 
-        return (
-            <div className={styles.pagination}>
-                {Array.from({ length: totalPages }, (_, i) => (
-                    <button
-                        key={i + 1}
-                        onClick={() => handlePageChange(i + 1)}
-                        className={`${styles.pageButton} ${currentPages[activeTab] === i + 1 ? styles.active : ''}`}
-                    >
-                        {i + 1}
-                    </button>
-                ))}
-            </div>
-        );
-    };
+      <div className={styles.tabsMenu}>
+        <button className={`${styles.tabButton} ${activeTab === TABS.FILMS ? styles.active : ''}`} onClick={() => setActiveTab(TABS.FILMS)}>
+          Фильмы
+        </button>
+        <button className={`${styles.tabButton} ${activeTab === TABS.AUDIOBOOKS ? styles.active : ''}`} onClick={() => setActiveTab(TABS.AUDIOBOOKS)}>
+          Аудиокниги
+        </button>
+        <button className={`${styles.tabButton} ${activeTab === TABS.LECTURES ? styles.active : ''}`} onClick={() => setActiveTab(TABS.LECTURES)}>
+          Лекции
+        </button>
+        <button className={`${styles.tabButton} ${activeTab === TABS.BOOKS ? styles.active : ''}`} onClick={() => setActiveTab(TABS.BOOKS)}>
+          Книги
+        </button>
+      </div>
 
-    const renderContent = () => {
-        const currentItems = library[activeTab];
-        const startIndex = (currentPages[activeTab] - 1) * ITEMS_PER_PAGE;
-        const paginatedItems = currentItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+      <div className={styles.content}>{renderTabContent()}</div>
 
-        return (
-            <>
-                <div className={styles.mediaGrid}>
-                    {paginatedItems.map((item, index) => (
-                        <div key={`${activeTab}-${item.id}`} className={styles.mediaCard}>
-                            <div className={styles.mediaContainer}>{renderMediaContent(item)}</div>
-                            <div className={styles.mediaInfo}>
-                                <h3 className={styles.mediaTitle}>{item.title}</h3>
-                                {item.author && <p className={styles.mediaAuthor}>{item.author}</p>}
-                                {item.year && <p className={styles.mediaYear}>{item.year}</p>}
-                                {item.duration && <p className={styles.mediaDuration}>{item.duration}</p>}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                {renderPagination(currentItems.length)}
-            </>
-        );
-    };
-
-    return (
-        <div className={styles.container}>
-            <Header />
-            <h1 className={styles.mainTitle}>Фильмы и книги</h1>
-
-            <TabsMenu activeTab={activeTab} onTabChange={setActiveTab} tabs={TABS_CONFIG} />
-
-            <div className={styles.content}>
-                {library[activeTab].length > 0 ? renderContent() : <div className={styles.emptyMessage}>В этой категории пока нет материалов</div>}
-            </div>
-
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default FilmsPage;

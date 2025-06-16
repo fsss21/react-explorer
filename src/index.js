@@ -6,6 +6,7 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import AccessibilityHandler from './components/AccessibilityHandler';
+import { LanguageProvider } from './LanguageContext';
 
 import MainPage from './Pages/MainPage/index.jsx';
 import GamesPage from './Pages/GamesPage/index.jsx';
@@ -17,10 +18,7 @@ import HistoricalPage from './Pages/HistoricalPage/index.jsx';
 import PersonaliPage from './Pages/PersonaliPage/index.jsx';
 import PersonDetail from './Pages/PersonaliPage/PersonDetail/index.jsx';
 
-import CheluskinaPage from './Pages/HistoricalPage/CheluskinaPage/index.jsx';
-import RuslanPage from './Pages/HistoricalPage/RuslanPage/index.jsx';
-import ItalyPage from './Pages/HistoricalPage/ItalyPage/index.jsx';
-import AlexPage from './Pages/HistoricalPage/AlexPage/index.jsx';
+import HistoricalItem from './Pages/HistoricalPage/HistoricalItem/index.jsx';
 
 import QuizPage from './Pages/GamesPage/QuizPage/index.jsx';
 import CrosswordPage from './Pages/GamesPage/CrosswordPage/index.jsx';
@@ -33,87 +31,77 @@ import ThanksPage from './Pages/GamesPage/ThanksPage/index.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Preview />,
+    element: <Preview />
   },
   {
     path: 'main',
-    element: <MainPage />,
+    element: <MainPage />
   },
   {
     path: 'history',
-    element: <HistoricalPage />,
+    element: <HistoricalPage />
   },
   {
-    path: 'ruslan',
-    element: <RuslanPage />,
-  },
-  {
-    path: 'cheluskina',
-    element: <CheluskinaPage />,
-  },
-  {
-    path: 'italy',
-    element: <ItalyPage />,
-  },
-  {
-    path: 'alex',
-    element: <AlexPage />,
+    path: 'history-item/:id',
+    element: <HistoricalItem />
   },
   {
     path: 'personali',
     children: [
       {
         index: true,
-        element: <PersonaliPage />,
+        element: <PersonaliPage />
       },
       {
         path: ':id',
-        element: <PersonDetail />,
-      },
-    ],
+        element: <PersonDetail />
+      }
+    ]
   },
   {
     path: 'films',
-    element: <FilmsPage />,
+    element: <FilmsPage />
   },
   {
     path: 'games',
-    element: <GamesPage />,
+    element: <GamesPage />
   },
   {
     path: 'puzzle',
-    element: <PuzzlePage />,
+    element: <PuzzlePage />
   },
   {
     path: 'quiz',
-    element: <QuizPage />,
+    element: <QuizPage />
   },
   {
     path: 'crossword',
-    element: <CrosswordPage />,
+    element: <CrosswordPage />
   },
   {
     path: 'congrats',
-    element: <CongratsPage />,
+    element: <CongratsPage />
   },
   {
     path: 'certificate-form',
-    element: <CertificateFormPage />,
+    element: <CertificateFormPage />
   },
   {
     path: 'thanks',
-    element: <ThanksPage />,
+    element: <ThanksPage />
   },
   {
     path: '*',
-    element: <div>Страница не найдена</div>,
-  },
+    element: <div>Страница не найдена</div>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <AccessibilityHandler />
-    <RouterProvider router={router} />
-  </Provider>
+  <LanguageProvider>
+    <Provider store={store}>
+      <AccessibilityHandler />
+      <RouterProvider router={router} />
+    </Provider>
+  </LanguageProvider>
 );

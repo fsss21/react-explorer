@@ -17,3 +17,5 @@ export const translations = {
     audioguide: 'audio guide\nof the app'
   }
 };
+
+export const operationStyles = {};
