@@ -14,7 +14,7 @@ export const ru = {
         { src: '../images/eon4.jpg', title: 'На фото корабли № 47, № 48 и транспорт АНАДЫРЬ. Автор фото М. Трояновский.' },
         { src: '../images/eon5.jpg', title: 'М.Трояновский_в_машинном_отделении,_ЭОН-3,_1936_г_._2' },
       ],
-      videos: [{ src: '/videos/shhuna-video1.mp4', title: 'Новосибирские острова-загадки' }],
+      videos: [],
       audios: [],
     },
     {
@@ -210,11 +210,15 @@ export const ru = {
     ],
   },
   library: {
-    films: [],
+    films: [{ src: 'https://yandex.ru/video/preview/10596204861221182028', title: 'Фильм советско-итальянский: "Красная палатка"! О спасении участников экспедиции Нобиле!' }],
     audioBooks: [],
     lectures: [],
-    books: [],
+    books: [{src: '../images/book0-1.jpg', title: 'Владимир Стругацкий - Впереди - ледовая разведка'},
+		{src: '../images/book0-2.jpg', title: 'Алексей Григорьев - Победитель. Героическая жизнь ледокола «Красин»'},
+		{src: '../images/book0-3.jpg', title: 'Эмилий Миндлин - «Красин» во льдах'},
+		
+	 ]  ,
   },
-  booksfilmsData: [],
+  
   exhibitsData: [],
 };

@@ -9,11 +9,7 @@ export const puzzleData = [
     imageSrc: '/images/puzzle2.jpg',
     completed: false
   },
-  {
-    id: 3,
-    imageSrc: '/images/puzzle3.jpg',
-    completed: false
-  }
+  
 ];
 
 export const difficultyLevels = [
