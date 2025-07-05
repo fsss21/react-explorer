@@ -113,7 +113,6 @@ export const operationStyles = {
     left: '3%',
     width: '400px',
     height: '160px',
-
     cursor: 'pointer'
   },
   chuh: {
@@ -136,7 +135,7 @@ export const operationStyles = {
     position: 'absolute',
     top: '10%',
     left: '20%',
-    width: '690px',
+    width: '600px',
     height: '250px',
     cursor: 'pointer'
   },
@@ -146,7 +145,14 @@ export const operationStyles = {
     left: '25%',
     width: '600px',
     height: '180px',
-
+    cursor: 'pointer'
+  },
+  regular: {
+    position: 'absolute',
+    top: '19%',
+    right: '11%',
+    width: '590px',
+    height: '130px',
     cursor: 'pointer'
   }
 };

@@ -15,42 +15,45 @@ const GamesPage = () => {
   const { isEnabled } = useSelector((state) => state.accessibility);
   const { data } = useLanguage();
   return (
-    <>{isEnabled ? (
-      <section className={styles.container}>
-        <Header />
-        <div className={styles.buttons_enabled}>
-          <Link className={styles.button} to="/puzzle">
-            {data.tabPuzzles} <br />
-          </Link>
-          <Link className={styles.button} to="/crossword">
-            {data.tabCrossword}
-          </Link>
-          <Link className={styles.button} to="/quiz">
-            {data.tabQuiz}
-          </Link>
-        </div>
-        <Footer />
-      </section>
-    ) : (
-      <div className={styles.container}>
-        <Header />
-        <div className={styles.buttons}>
-          <Link className={styles.button} to="/puzzle">
+    <>
+      {isEnabled ? (
+        <section className={styles.container}>
+          <Header />
+          <div className={styles.buttons_enabled}>
+            <Link className={styles.button} to="/puzzle">
+              {data.tabPuzzles} <br />
+            </Link>
+            <Link className={styles.button} to="/crossword">
+              {data.tabCrossword}
+            </Link>
+            <Link className={styles.button} to="/quiz">
+              {data.tabQuiz}
+            </Link>
+          </div>
+          <Footer />
+        </section>
+      ) : (
+        <div className={styles.container}>
+          <Header />
+          <div className={styles.buttons}>
+            <Link className={styles.button} to="/puzzle">
               {data.tabPuzzles} <br />
               <img src={puzzle} alt="" />
-          </Link>
-          <Link className={styles.button} to="/crossword">
+            </Link>
+            <Link className={styles.button} to="/crossword">
               {data.tabCrossword}
               <img src={crossword} alt="" />
-          </Link>
-          <Link className={styles.button} to="/quiz">
+            </Link>
+          </div>
+          <div className={styles.buttons_quiz}>
+            <Link className={styles.button} to="/quiz">
               {data.tabQuiz}
               <img src={quiz} alt="" />
-          </Link>
+            </Link>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    )}
+      )}
     </>
   );
 };

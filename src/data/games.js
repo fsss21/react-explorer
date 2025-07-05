@@ -8,8 +8,7 @@ export const puzzleData = [
     id: 2,
     imageSrc: '/images/puzzle2.jpg',
     completed: false
-  },
-  
+  }
 ];
 
 export const difficultyLevels = [
@@ -128,9 +127,9 @@ export const quizData = [
       'Название полярной станции, основанной в 1923 году на севере Архангельской области, для изучения климатических условий восточной части Новой Земли:',
 
     answers: [
-      { id: 'a', text: 'Бухта Тихая;', correct: false },
-      { id: 'b', text: 'Остров Рудольфа; ', correct: false },
-      { id: 'c', text: 'Маточкин шар ;', correct: true }
+      { id: 'a', text: 'Бухта Тихая', correct: false },
+      { id: 'b', text: 'Остров Рудольфа ', correct: false },
+      { id: 'c', text: 'Маточкин шар ', correct: true }
     ],
     multiAnswer: false
   },
@@ -139,9 +138,9 @@ export const quizData = [
     question: 'Название самолёта, на котором Б.Г.Чухновский провёл первую в мировой истории ледовую разведку в Арктике:',
 
     answers: [
-      { id: 'a', text: 'Р-5;', correct: false },
-      { id: 'b', text: 'Ю-20 ;', correct: true },
-      { id: 'c', text: 'АНТ-6А;', correct: false }
+      { id: 'a', text: 'Р-5', correct: false },
+      { id: 'b', text: 'Ю-20 ', correct: true },
+      { id: 'c', text: 'АНТ-6А', correct: false }
     ],
     multiAnswer: false
   },
@@ -151,8 +150,8 @@ export const quizData = [
 
     answers: [
       { id: 'a', text: 'N-4 Италия', correct: true },
-      { id: 'b', text: 'СССР В-6 Осоавиахим;', correct: false },
-      { id: 'c', text: 'СССР В-7 Челюскинец;', correct: false }
+      { id: 'b', text: 'СССР В-6 Осоавиахим', correct: false },
+      { id: 'c', text: 'СССР В-7 Челюскинец', correct: false }
     ],
     multiAnswer: false
   },
@@ -161,9 +160,9 @@ export const quizData = [
     question: 'Название окраинного моря Северного ледовитого океана, ранее называвшегося Нярзомским:',
 
     answers: [
-      { id: 'a', text: 'Баренцево;', correct: false },
-      { id: 'b', text: 'Белое;', correct: false },
-      { id: 'c', text: 'Карское ;', correct: true }
+      { id: 'a', text: 'Баренцево', correct: false },
+      { id: 'b', text: 'Белое', correct: false },
+      { id: 'c', text: 'Карское ', correct: true }
     ],
     multiAnswer: false
   },
@@ -172,20 +171,20 @@ export const quizData = [
     question: 'Крупный кусок льда, свободно плавающий в океане или море:',
 
     answers: [
-      { id: 'a', text: 'Глыба;', correct: false },
+      { id: 'a', text: 'Глыба', correct: false },
       { id: 'b', text: 'Айсберг', correct: true },
-      { id: 'c', text: 'Льдина;', correct: false }
+      { id: 'c', text: 'Льдина', correct: false }
     ],
     multiAnswer: false
   },
   {
     id: 6,
-    question: 'Район, связанный со спасением экипажа парохода «Челюскин» в 1934 году;',
+    question: 'Район, связанный со спасением экипажа парохода «Челюскин» в 1934 году',
 
     answers: [
       { id: 'a', text: 'Арктика', correct: true },
-      { id: 'b', text: 'п-ов Чукотский;', correct: false },
-      { id: 'c', text: 'о. Новая Земля;', correct: false }
+      { id: 'b', text: 'п-ов Чукотский', correct: false },
+      { id: 'c', text: 'о. Новая Земля', correct: false }
     ],
     multiAnswer: false
   },
@@ -194,8 +193,8 @@ export const quizData = [
     question: 'Название советского ледокола, принимавшего участие во спасении экспедиции под руководством У.Нобиле и называвшийся до 1927 года «Святогор»:',
 
     answers: [
-      { id: 'a', text: '«И.Сталин»;', correct: false },
-      { id: 'b', text: '«Ермак»;', correct: false },
+      { id: 'a', text: '«И.Сталин»', correct: false },
+      { id: 'b', text: '«Ермак»', correct: false },
       { id: 'c', text: '«Красин»', correct: true }
     ],
     multiAnswer: false
@@ -205,7 +204,7 @@ export const quizData = [
     question: 'Назовите самый Северный полуостров Азии:',
 
     answers: [
-      { id: 'a', text: 'Кольский;', correct: false },
+      { id: 'a', text: 'Кольский', correct: false },
       { id: 'b', text: 'Таймыр', correct: true },
       { id: 'c', text: 'Таймыр', correct: false }
     ],
@@ -216,9 +215,9 @@ export const quizData = [
     question: 'Расшифруйте аббревиатуру – ГУСМП:',
 
     answers: [
-      { id: 'a', text: 'Главное управление Северного морского пути ;', correct: true },
-      { id: 'b', text: 'Главное управление Северного морского пароходства;', correct: false },
-      { id: 'c', text: 'Главное управление Северного магнитного полюса системы;', correct: false }
+      { id: 'a', text: 'Главное управление Северного морского пути ', correct: true },
+      { id: 'b', text: 'Главное управление Северного морского пароходства', correct: false },
+      { id: 'c', text: 'Главное управление Северного магнитного полюса системы', correct: false }
     ],
     multiAnswer: false
   },
@@ -227,8 +226,8 @@ export const quizData = [
     question: 'Автор первой в мире лоции Карского моря и Новой Земли, островов Врангеля и Геральд:',
 
     answers: [
-      { id: 'a', text: 'Б.Г.Чухновский;', correct: true },
-      { id: 'b', text: 'Н.И.Евгенов ;', correct: false },
+      { id: 'a', text: 'Б.Г.Чухновский', correct: true },
+      { id: 'b', text: 'Н.И.Евгенов ', correct: false },
       { id: 'c', text: 'О.Ю.Шмидт.', correct: false }
     ],
     multiAnswer: false

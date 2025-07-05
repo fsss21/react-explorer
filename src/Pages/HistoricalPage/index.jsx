@@ -23,7 +23,7 @@ const HistoricalPage = () => {
   return (
     <>
       <section className={styles.container}>
-        <Header />
+        {/* <Header /> */}
         {isEnabled ? (
           <div className={styles.content}>
             <span className={styles.title}>{data.sectionHistoryTitle}</span>

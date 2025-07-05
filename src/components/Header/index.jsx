@@ -14,7 +14,6 @@ const Header = () => {
   const isGameItemPage = location.pathname === '/puzzle' || location.pathname === '/crossword' || location.pathname === '/quiz';
   const IsFinalGamePage = location.pathname === '/congrats' || location.pathname === '/certificate-form' || location.pathname === '/thanks';
 
-
   const dispatch = useDispatch();
   const { isEnabled, colorScheme, schemes } = useSelector((state) => state.accessibility);
   const handleSchemeChange = (scheme) => {
@@ -46,8 +45,7 @@ const Header = () => {
                     border: colorScheme === key ? '2px solid #ff0000' : '1px solid #ccc'
                   }}
                   onClick={() => handleSchemeChange(key)}
-                  title={`Схема ${key.replace('scheme', '')}`}
-                >
+                  title={`Схема ${key.replace('scheme', '')}`}>
                   <span style={{ color: textColor }}>Ц</span>
                 </span>
               )
@@ -72,8 +70,7 @@ const Header = () => {
         <button
           onClick={toggleLang}
           className={`${styles.button_header} ${isMainPage ? styles.button_header_main : ''} 
-                ${isGamesPage ? styles.button_header_games : ''}`}
-        >
+          ${isGamesPage ? styles.button_header_games : ''}`}>
           {lang}
         </button>
       </div>
