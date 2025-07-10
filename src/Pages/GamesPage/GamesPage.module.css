@@ -14,15 +14,17 @@
     display: flex;
     position: absolute;
     gap: 15px;
-    top: 8%;
+    top: 6%;
     left: 28%;
     transform: translate(-50%, 15%);
 }
 
 .buttons_quiz{
     position: absolute;
-    bottom: 8%;
-    left: 5%;
+    bottom: 16%;
+    left: 28%;
+    transform: translate(-50%, 15%);
+
 }
 
 /* версия слабовидящих включена */

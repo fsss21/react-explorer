@@ -12,6 +12,7 @@ const ExhibitDetailModal = ({ exhibit, onClose, onBackToCatalog }) => {
   const { isEnabled } = useSelector((state) => state.accessibility);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const images = exhibit?.images || [];
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -42,10 +43,8 @@ const ExhibitDetailModal = ({ exhibit, onClose, onBackToCatalog }) => {
 
   const detailClass = styles.detailModal;
   const detailEnabled = isEnabled ? styles.detailModal_enabled : '';
-  const basicClass = styles.modalHeader 
+  const basicClass = styles.modalHeader;
   const enabledClass = isEnabled ? styles.modalHeader_enabled : '';
-
-
 
   return (
     <div className={styles.modalOverlay}>
@@ -91,7 +90,7 @@ const ExhibitDetailModal = ({ exhibit, onClose, onBackToCatalog }) => {
 
             {/* Пагинация */}
             <div className={styles.pagination}>
-              {exhibit.images.map((_, index) => (
+              {images.map((_, index) => (
                 <button
                   key={index}
                   className={`${styles.paginationDot} ${index === currentImageIndex ? styles.active : ''}`}
