@@ -2,14 +2,16 @@ import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import GamesMenu from '../../../components/GamesMenu';
 import styles from './CrosswordPage.module.css';
-import { crosswordData } from '../../../data/games';
 import Footer from '../../../components/Footer';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 
+import { useSelector } from 'react-redux';
+import { useLanguage } from '../../../LanguageContext';
 
 const CrosswordPage = () => {
   const navigate = useNavigate();
+  const { isEnabled } = useSelector((state) => state.accessibility);
   const [grid, setGrid] = useState([]);
   const [selectedClue, setSelectedClue] = useState(null);
   const [inputValue, setInputValue] = useState('');
@@ -18,6 +20,8 @@ const CrosswordPage = () => {
   const [allRevealed, setAllRevealed] = useState(false);
   const [hintVisible, setHintVisible] = useState(false); // Состояние видимости подсказки
   const keyboardRef = useRef(null);
+  const { data = {} } = useLanguage();
+  const crosswordData = data.crosswordData;
 
   const crosswordWords = useMemo(
     () =>
@@ -264,6 +268,10 @@ const CrosswordPage = () => {
     }
   };
 
+  const keyboardThemeClasses = [styles.keyboardTheme, isEnabled && styles.enabledKeyboardTheme].filter(Boolean).join(' ');
+  const keyboardDefaultBtnClasses = [styles.keyboardDefaultBtn, isEnabled && styles.enabledKeyboardDefaultBtn].filter(Boolean).join(' ');
+  const keyboardDeleteBtnClasses = [styles.keyboardDeleteBtn, isEnabled && styles.enabledKeyboardDeleteBtn].filter(Boolean).join(' ');
+
   return (
     <section className={styles.container}>
       <GamesMenu activeGame="кроссворд" solvedCrosswords={solvedCount} totalCrosswords={10} />
@@ -281,16 +289,14 @@ const CrosswordPage = () => {
                 const isRevealed = cell.revealed;
 
                 return (
-                <div
-                      key={`${rowIndex}-${colIndex}`}
-                      className={`${styles.cell} ${isEmpty ? styles.empty : ''} ${isSelected ? styles.selected : ''} ${isSolved ? styles.solved : ''}`}
-                      onClick={() => !allRevealed && handleCellClick(rowIndex, colIndex)}
-                    >
-                     {!isEmpty && !isSolved && !isRevealed && cell.clueNumber && (
-                        <span className={styles.cellNumber}>{cell.clueNumber}</span>
-                      )}
-                      {(isSolved || isRevealed) && cell.value}
-                </div>
+                  <div
+                    key={`${rowIndex}-${colIndex}`}
+                    className={`${styles.cell} ${isEmpty ? styles.empty : ''} ${isSelected ? styles.selected : ''} ${isSolved ? styles.solved : ''}`}
+                    onClick={() => !allRevealed && handleCellClick(rowIndex, colIndex)}
+                  >
+                    {!isEmpty && !isSolved && !isRevealed && cell.clueNumber && <span className={styles.cellNumber}>{cell.clueNumber}</span>}
+                    {(isSolved || isRevealed) && cell.value}
+                  </div>
                 );
               })}
             </div>
@@ -357,15 +363,15 @@ const CrosswordPage = () => {
                 }}
                 buttonTheme={[
                   {
-                    class: styles.keyboardDefaultBtn, // Ваш класс для обычных кнопок
+                    class: keyboardDefaultBtnClasses || 'hg-button', // fallback класс
                     buttons: 'Й Ц У К Е Н Г Ш Щ З Х Ъ Ф Ы В А П Р О Л Д Ж Э Я Ч С М И Т Ь Б Ю'
                   },
                   {
-                    class: `${styles.keyboardDeleteBtn} hg-button hg-button-bksp`, // Добавлены обязательные классы
+                    class: `${keyboardDeleteBtnClasses} hg-button hg-button-bksp`,
                     buttons: '{bksp}'
                   }
                 ]}
-                theme={`hg-theme-default ${styles.keyboardTheme}`}
+                theme={`hg-theme-default ${keyboardThemeClasses}`}
               />
             </div>
           )}
