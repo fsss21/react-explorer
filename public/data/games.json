@@ -1,384 +1,374 @@
 {
-  "gamesData": [
+  "puzzleData": [
     {
-      "puzzleData": [
-        {
-          "id": 1,
-          "imageSrc": "/images/puzzle1.jpg",
-          "completed": false
-        },
-        {
-          "id": 2,
-          "imageSrc": "/images/puzzle2.jpg",
-          "completed": false
-        }
-      ]
+      "id": 1,
+      "imageSrc": "/images/puzzle1.jpg",
+      "completed": false
     },
     {
-      "difficultyLevels": [
-        {
-          "id": "easy",
-          "name": "Легкий",
-          "rows": 3,
-          "columns": 4,
-          "description": "3x4"
-        },
-        {
-          "id": "medium",
-          "name": "Средний",
-          "rows": 4,
-          "columns": 6,
-          "description": "4x6"
-        },
-        {
-          "id": "hard",
-          "name": "Сложный",
-          "rows": 6,
-          "columns": 8,
-          "description": "6x8"
-        }
-      ]
+      "id": 2,
+      "imageSrc": "/images/puzzle2.jpg",
+      "completed": false
+    }
+  ],
+  "difficultyLevels": [
+    {
+      "id": "easy",
+      "name": "Легкий",
+      "rows": 3,
+      "columns": 4,
+      "description": "3x4"
     },
     {
-      "crosswordData": {
-        "size": 20,
-        "words": [
-          {
-            "id": "h1",
-            "word": "Сибиряков",
-            "clue": "1.Название ледокола, первым преодолевшего трассу Северного морского пути за одну навигацию",
-            "direction": "horizontal",
-            "start": {
-              "row": 11,
-              "col": 15
-            },
-            "solved": false
-          },
-          {
-            "id": "v2",
-            "word": "льдина",
-            "clue": "Отдельный кусок льда, дрейфующий на поверхности воды",
-            "direction": "vertical",
-            "start": {
-              "row": 8,
-              "col": 16
-            },
-            "solved": false
-          },
-          {
-            "id": "h3",
-            "word": "Нобиле",
-            "clue": "Фамилия руководителя арктической экспедиции к Северному полюсу на дирижабле «Италия» в 1928 году",
-            "direction": "horizontal",
-            "start": {
-              "row": 8,
-              "col": 12
-            },
-            "solved": false
-          },
-          {
-            "id": "v4",
-            "word": "Арктика",
-            "clue": "Географический район вокруг Северного полюса",
-            "direction": "vertical",
-            "start": {
-              "row": 10,
-              "col": 19
-            },
-            "solved": false
-          },
-          {
-            "id": "v5",
-            "word": "ледокол",
-            "clue": "Судно, способное преодолевать льды и обеспечивать проход грузов по ледяным морям",
-            "direction": "vertical",
-            "start": {
-              "row": 3,
-              "col": 11
-            },
-            "solved": false
-          },
-          {
-            "id": "h6",
-            "word": "архипелаг",
-            "clue": "Группа морских островов, расположенных по близости друг от друга",
-            "direction": "horizontal",
-            "start": {
-              "row": 3,
-              "col": 5
-            },
-            "solved": false
-          },
-          {
-            "id": "v7",
-            "word": "Чухновский",
-            "clue": "Советский лётчик, родоначальник ледовых разведок, участник операции по спасению членов экспедиции дирижабля «Италия» под руководством У.Нобиле в 1928 году",
-            "direction": "vertical",
-            "start": {
-              "row": 1,
-              "col": 7
-            },
-            "solved": false
-          },
-          {
-            "id": "h8",
-            "word": "Челюскин",
-            "clue": "Русский исследователь, открывший самую северную точку Евразии, которая теперь носит его имя",
-            "direction": "horizontal",
-            "start": {
-              "row": 1,
-              "col": 6
-            },
-            "solved": false
-          },
-          {
-            "id": "v9",
-            "word": "Красин",
-            "clue": "Название советского ледокола, принимавшего участие во спасении экспедиции под руководством У.Нобиле",
-            "direction": "vertical",
-            "start": {
-              "row": 1,
-              "col": 5
-            },
-            "solved": false
-          },
-          {
-            "id": "h10",
-            "word": "дрейфующая",
-            "clue": "станция «СП-1», так называется научно-исследовательская станция, создаваемая на льдах в глубоководной части Северного ледовитого океана",
-            "direction": "horizontal",
-            "start": {
-              "row": 5,
-              "col": 11
-            },
-            "solved": false
-          }
-        ]
+      "id": "medium",
+      "name": "Средний",
+      "rows": 4,
+      "columns": 6,
+      "description": "4x6"
+    },
+    {
+      "id": "hard",
+      "name": "Сложный",
+      "rows": 6,
+      "columns": 8,
+      "description": "6x8"
+    }
+  ],
+  "crosswordData": {
+    "size": 20,
+    "words": [
+      {
+        "id": "h1",
+        "word": "Сибиряков",
+        "clue": "1.Название ледокола, первым преодолевшего трассу Северного морского пути за одну навигацию",
+        "direction": "horizontal",
+        "start": {
+          "row": 11,
+          "col": 15
+        },
+        "solved": false
+      },
+      {
+        "id": "v2",
+        "word": "льдина",
+        "clue": "Отдельный кусок льда, дрейфующий на поверхности воды",
+        "direction": "vertical",
+        "start": {
+          "row": 8,
+          "col": 16
+        },
+        "solved": false
+      },
+      {
+        "id": "h3",
+        "word": "Нобиле",
+        "clue": "Фамилия руководителя арктической экспедиции к Северному полюсу на дирижабле «Италия» в 1928 году",
+        "direction": "horizontal",
+        "start": {
+          "row": 8,
+          "col": 12
+        },
+        "solved": false
+      },
+      {
+        "id": "v4",
+        "word": "Арктика",
+        "clue": "Географический район вокруг Северного полюса",
+        "direction": "vertical",
+        "start": {
+          "row": 10,
+          "col": 19
+        },
+        "solved": false
+      },
+      {
+        "id": "v5",
+        "word": "ледокол",
+        "clue": "Судно, способное преодолевать льды и обеспечивать проход грузов по ледяным морям",
+        "direction": "vertical",
+        "start": {
+          "row": 3,
+          "col": 11
+        },
+        "solved": false
+      },
+      {
+        "id": "h6",
+        "word": "архипелаг",
+        "clue": "Группа морских островов, расположенных по близости друг от друга",
+        "direction": "horizontal",
+        "start": {
+          "row": 3,
+          "col": 5
+        },
+        "solved": false
+      },
+      {
+        "id": "v7",
+        "word": "Чухновский",
+        "clue": "Советский лётчик, родоначальник ледовых разведок, участник операции по спасению членов экспедиции дирижабля «Италия» под руководством У.Нобиле в 1928 году",
+        "direction": "vertical",
+        "start": {
+          "row": 1,
+          "col": 7
+        },
+        "solved": false
+      },
+      {
+        "id": "h8",
+        "word": "Челюскин",
+        "clue": "Русский исследователь, открывший самую северную точку Евразии, которая теперь носит его имя",
+        "direction": "horizontal",
+        "start": {
+          "row": 1,
+          "col": 6
+        },
+        "solved": false
+      },
+      {
+        "id": "v9",
+        "word": "Красин",
+        "clue": "Название советского ледокола, принимавшего участие во спасении экспедиции под руководством У.Нобиле",
+        "direction": "vertical",
+        "start": {
+          "row": 1,
+          "col": 5
+        },
+        "solved": false
+      },
+      {
+        "id": "h10",
+        "word": "дрейфующая",
+        "clue": "станция «СП-1», так называется научно-исследовательская станция, создаваемая на льдах в глубоководной части Северного ледовитого океана",
+        "direction": "horizontal",
+        "start": {
+          "row": 5,
+          "col": 11
+        },
+        "solved": false
       }
+    ]
+  },
+  "quizData": [
+    {
+      "id": 1,
+      "question": "Название полярной станции, основанной в 1923 году на севере Архангельской области, для изучения климатических условий восточной части Новой Земли:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Бухта Тихая",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Остров Рудольфа ",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Маточкин шар ",
+          "correct": true
+        }
+      ],
+      "multiAnswer": false
     },
     {
-      "quizDataMain": [
+      "id": 2,
+      "question": "Название самолёта, на котором Б.Г.Чухновский провёл первую в мировой истории ледовую разведку в Арктике:",
+      "answers": [
         {
-          "id": 1,
-          "question": "Название полярной станции, основанной в 1923 году на севере Архангельской области, для изучения климатических условий восточной части Новой Земли:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Бухта Тихая",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Остров Рудольфа ",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Маточкин шар ",
-              "correct": true
-            }
-          ],
-          "multiAnswer": false
+          "id": "a",
+          "text": "Р-5",
+          "correct": false
         },
         {
-          "id": 2,
-          "question": "Название самолёта, на котором Б.Г.Чухновский провёл первую в мировой истории ледовую разведку в Арктике:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Р-5",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Ю-20 ",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "АНТ-6А",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
+          "id": "b",
+          "text": "Ю-20 ",
+          "correct": true
         },
         {
-          "id": 3,
-          "question": "Дирижабль, на котором экспедиция под руководством У.Нобиле совершила полёт со Шпицбергена к Северному полюсу:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "N-4 Италия",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "СССР В-6 Осоавиахим",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "СССР В-7 Челюскинец",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 4,
-          "question": "Название окраинного моря Северного ледовитого океана, ранее называвшегося Нярзомским:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Баренцево",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Белое",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Карское ",
-              "correct": true
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 5,
-          "question": "Крупный кусок льда, свободно плавающий в океане или море:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Глыба",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Айсберг",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Льдина",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 6,
-          "question": "Район, связанный со спасением экипажа парохода «Челюскин» в 1934 году",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Арктика",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "п-ов Чукотский",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "о. Новая Земля",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 7,
-          "question": "Название советского ледокола, принимавшего участие во спасении экспедиции под руководством У.Нобиле и называвшийся до 1927 года «Святогор»:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "«И.Сталин»",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "«Ермак»",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "«Красин»",
-              "correct": true
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 8,
-          "question": "Назовите самый Северный полуостров Азии:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Кольский",
-              "correct": false
-            },
-            {
-              "id": "b",
-              "text": "Таймыр",
-              "correct": true
-            },
-            {
-              "id": "c",
-              "text": "Таймыр",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 9,
-          "question": "Расшифруйте аббревиатуру – ГУСМП:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Главное управление Северного морского пути ",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Главное управление Северного морского пароходства",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "Главное управление Северного магнитного полюса системы",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
-        },
-        {
-          "id": 10,
-          "question": "Автор первой в мире лоции Карского моря и Новой Земли, островов Врангеля и Геральд:",
-          "answers": [
-            {
-              "id": "a",
-              "text": "Б.Г.Чухновский",
-              "correct": true
-            },
-            {
-              "id": "b",
-              "text": "Н.И.Евгенов ",
-              "correct": false
-            },
-            {
-              "id": "c",
-              "text": "О.Ю.Шмидт.",
-              "correct": false
-            }
-          ],
-          "multiAnswer": false
+          "id": "c",
+          "text": "АНТ-6А",
+          "correct": false
         }
-      ]
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 3,
+      "question": "Дирижабль, на котором экспедиция под руководством У.Нобиле совершила полёт со Шпицбергена к Северному полюсу:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "N-4 Италия",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "СССР В-6 Осоавиахим",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "СССР В-7 Челюскинец",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 4,
+      "question": "Название окраинного моря Северного ледовитого океана, ранее называвшегося Нярзомским:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Баренцево",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Белое",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Карское ",
+          "correct": true
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 5,
+      "question": "Крупный кусок льда, свободно плавающий в океане или море:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Глыба",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Айсберг",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Льдина",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 6,
+      "question": "Район, связанный со спасением экипажа парохода «Челюскин» в 1934 году",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Арктика",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "п-ов Чукотский",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "о. Новая Земля",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 7,
+      "question": "Название советского ледокола, принимавшего участие во спасении экспедиции под руководством У.Нобиле и называвшийся до 1927 года «Святогор»:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "«И.Сталин»",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "«Ермак»",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "«Красин»",
+          "correct": true
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 8,
+      "question": "Назовите самый Северный полуостров Азии:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Кольский",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Таймыр",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Таймыр",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 9,
+      "question": "Расшифруйте аббревиатуру – ГУСМП:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Главное управление Северного морского пути ",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Главное управление Северного морского пароходства",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Главное управление Северного магнитного полюса системы",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
+    },
+    {
+      "id": 10,
+      "question": "Автор первой в мире лоции Карского моря и Новой Земли, островов Врангеля и Геральд:",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Б.Г.Чухновский",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Н.И.Евгенов ",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "О.Ю.Шмидт.",
+          "correct": false
+        }
+      ],
+      "multiAnswer": false
     }
   ]
 }
