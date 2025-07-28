@@ -51,30 +51,34 @@ const FilmsPage = () => {
   return (
     <section className={styles.container}>
       <Header />
-      <span className={styles.mainTitle}>{data.mediaTitle}</span>
+      <span className={styles.mainTitle} dangerouslySetInnerHTML={{ __html: data.mediaTitle }}></span>
 
       <div className={styles.tabsMenu}>
         <button
           className={`${styles.tabButton} ${activeTab === TABS.FILMS ? (isEnabled ? styles.enabledActive : styles.active) : ''}`}
-          onClick={() => setActiveTab(TABS.FILMS)}>
+          onClick={() => setActiveTab(TABS.FILMS)}
+        >
           {data.tabFilms}
         </button>
 
         <button
           className={`${styles.tabButton} ${activeTab === TABS.AUDIOBOOKS ? (isEnabled ? styles.enabledActive : styles.active) : ''}`}
-          onClick={() => setActiveTab(TABS.AUDIOBOOKS)}>
+          onClick={() => setActiveTab(TABS.AUDIOBOOKS)}
+        >
           {data.tabAudiobooks}
         </button>
 
         <button
           className={`${styles.tabButton} ${activeTab === TABS.LECTURES ? (isEnabled ? styles.enabledActive : styles.active) : ''}`}
-          onClick={() => setActiveTab(TABS.LECTURES)}>
+          onClick={() => setActiveTab(TABS.LECTURES)}
+        >
           {data.tabLectures}
         </button>
 
         <button
           className={`${styles.tabButton} ${activeTab === TABS.BOOKS ? (isEnabled ? styles.enabledActive : styles.active) : ''}`}
-          onClick={() => setActiveTab(TABS.BOOKS)}>
+          onClick={() => setActiveTab(TABS.BOOKS)}
+        >
           {data.tabBooks}
         </button>
       </div>
